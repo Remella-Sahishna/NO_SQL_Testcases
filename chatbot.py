@@ -11,7 +11,7 @@ app.config["MONGO_URI"] = "mongodb://localhost:27017/LibraryDB_Test"
 mongo = PyMongo(app)
 
 # Gemini API Key
-genai.configure(api_key="AIzaSyDGOSRXWiBBTWmR4Cff32GuzEJIeF6XNRo")   # 🔹 Replace with your actual key
+genai.configure(api_key="Your_API_key")   # 🔹 Replace with your actual key
 
 
 # Home (SignUp / Login)
