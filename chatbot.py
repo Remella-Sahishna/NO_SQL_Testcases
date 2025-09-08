@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.secret_key = "supersecret"
 
 # MongoDB Connection
-app.config["MONGO_URI"] = "mongodb://localhost:27017/LibraryDB"
+app.config["MONGO_URI"] = "mongodb://localhost:27017/LibraryDB_Test"
 mongo = PyMongo(app)
 
 # Gemini API Key
@@ -271,7 +271,8 @@ def chat():
             # Ask Gemini
             model = genai.GenerativeModel("gemini-2.5-flash")
             prompt = f"""
-            You are a helpful and friendly librarian assistant for a NoSQL Library system.
+            You are a friendly AI Librarian helping everyone and have huge knowledge on the entire globe.
+            you can give answers to any question not only related to the books in the library but also can answer any question from any book.
             
             Available books in the library:
             {book_context}
@@ -280,7 +281,7 @@ def chat():
             
             Please provide a helpful, friendly response. If the user is asking for book recommendations, 
             suggest books from the available library collection. Be conversational and encouraging.
-            Keep your response concise but informative.
+            Keep your response concise but informative. If the user asks the details of a book, share the details and show the availability.
             """
             result = model.generate_content(prompt)
             response_text = result.text
